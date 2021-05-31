@@ -1,4 +1,4 @@
-import {createStore} from 'redux'
+import {createStore , applyMiddleware} from 'redux'
 import { pizzaReducer } from './pizza/pizzaReducer'
-
-export let store=createStore(pizzaReducer)
+import { logger } from 'redux-logger'
+export let store=createStore(pizzaReducer,applyMiddleware(logger))
